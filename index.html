@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Precious Clearing & Logistics | Uganda</title>
+
+<style>
+:root{
+  --primary:#0b3d91;
+  --secondary:#062a63;
+  --light:#f4f6f8;
+  --card:#ffffff;
+}
+
+/* THEMES */
+body.green{
+  --primary:#1b5e20;
+  --secondary:#0d3d13;
+}
+
+body.dark{
+  --primary:#111;
+  --secondary:#000;
+  --light:#1a1a1a;
+  --card:#222;
+  color:white;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:var(--light);
+  line-height:1.6;
+}
+
+header{
+  background:var(--primary);
+  color:white;
+  padding:25px;
+  text-align:center;
+}
+
+nav{
+  background:var(--secondary);
+  text-align:center;
+  padding:12px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin:12px;
+  font-weight:bold;
+}
+
+section{
+  padding:70px 20px;
+  max-width:1100px;
+  margin:auto;
+}
+
+h2{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.hero{
+  background:var(--primary);
+  color:white;
+  text-align:center;
+  padding:110px 20px;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:20px;
+  background:white;
+  color:var(--primary);
+  padding:10px 22px;
+  border-radius:6px;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+.grid{
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+  justify-content:center;
+}
+
+.card{
+  background:var(--card);
+  padding:25px;
+  flex:1 1 280px;
+  border-radius:8px;
+  box-shadow:0 0 10px rgba(0,0,0,0.08);
+}
+
+img{
+  width:100%;
+  border-radius:6px;
+}
+
+form input, form textarea{
+  width:100%;
+  padding:10px;
+  margin:8px 0;
+}
+
+form button{
+  background:var(--primary);
+  color:white;
+  padding:10px 20px;
+  border:none;
+  cursor:pointer;
+}
+
+.theme-buttons{
+  text-align:center;
+  margin:15px;
+}
+
+.theme-buttons button{
+  padding:6px 10px;
+  margin:5px;
+}
+
+footer{
+  background:var(--secondary);
+  color:white;
+  text-align:center;
+  padding:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Precious Clearing & Logistics</h1>
+<p>Reliable Customs Clearing & Freight Services in Uganda</p>
+</header>
+
+<nav>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#process">Process</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<div class="theme-buttons">
+Theme:
+<button onclick="document.body.className=''">Blue</button>
+<button onclick="document.body.className='green'">Green</button>
+<button onclick="document.body.className='dark'">Dark</button>
+</div>
+
+<section class="hero">
+<h2>Fast • Secure • Professional Clearing Services</h2>
+<p>We handle your imports and exports smoothly with zero stress</p>
+<a href="#contact" class="btn">Request a Quote</a>
+</section>
+
+<section id="about">
+<h2>About Precious</h2>
+<div class="card">
+Precious Clearing & Logistics is a professional clearing company based in Uganda,
+specializing in customs documentation, freight forwarding, and cargo handling.
+We help businesses and individuals move goods safely and quickly across borders
+with full compliance and transparency.
+</div>
+</section>
+
+<section id="services">
+<h2>Our Services</h2>
+<div class="grid">
+<div class="card">Customs Clearing</div>
+<div class="card">Import & Export Documentation</div>
+<div class="card">Freight Forwarding</div>
+<div class="card">Cargo Handling</div>
+<div class="card">Warehousing</div>
+<div class="card">Transport & Logistics Support</div>
+</div>
+</section>
+
+<section id="process">
+<h2>How We Work</h2>
+<div class="grid">
+<div class="card">1️⃣ Submit shipment details</div>
+<div class="card">2️⃣ We process documentation</div>
+<div class="card">3️⃣ Customs clearance</div>
+<div class="card">4️⃣ Delivery to destination</div>
+</div>
+</section>
+
+<section id="gallery">
+<h2>Gallery</h2>
+<div class="grid">
+<div class="card"><img src="truck1.jpg"></div>
+<div class="card"><img src="cargo1.jpg"></div>
+<div class="card"><img src="warehouse1.jpg"></div>
+</div>
+<p style="text-align:center">Upload your company photos with these names.</p>
+</section>
+
+<section id="contact">
+<h2>Contact Us</h2>
+
+<div class="card">
+<p><strong>Phone:</strong> +25670589239</p>
+<p><strong>Phone 2:</strong> Add later</p>
+<p><strong>Email:</strong> Coming soon</p>
+<p><strong>Location:</strong> Kampala, Uganda</p>
+
+<a class="btn" href="https://wa.me/25670589239">Chat on WhatsApp</a>
+</div>
+
+<br>
+
+<h3 style="text-align:center">Request a Quote</h3>
+
+<form>
+<input placeholder="Your Name">
+<input placeholder="Phone Number">
+<textarea placeholder="Describe your shipment"></textarea>
+<button type="submit">Send Request</button>
+</form>
+
+</section>
+
+<footer>
+© 2026 Precious Clearing & Logistics. All rights reserved.
+</footer>
+
+</body>
+</html>
