@@ -31,14 +31,20 @@ header{
   gap:15px;
   flex-wrap:wrap;
 }
-
-.logo{
-  width:65px;height:65px;border-radius:50%;background:white;color:var(--primary);
-  display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:20px;
-  animation:pulse 2s infinite
+.logo-box{
+  height:60px;
+  width:60px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
-@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.1)}100%{transform:scale(1)}}
 
+.logo-media{
+  height:60px;
+  width:60px;
+  object-fit:contain;
+}
+  
 header h1{font-size:22px}
 
 /* NAV */
@@ -95,7 +101,12 @@ footer{background:var(--secondary);color:white;text-align:center;padding:20px;fo
 <body>
 
 <header>
-<div class="logo">PC</div>
+<div class="logo-box">
+  <video autoplay muted loop playsinline class="logo-media">
+    <source src="logo.mp4" type="video/mp4">
+  </video>
+</div>
+
 <div>
 <h1>Precious Clearing & Logistics</h1>
 <p>Fast • Reliable • Professional Services</p>
