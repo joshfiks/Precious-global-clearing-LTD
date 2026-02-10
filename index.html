@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Precious Clearing & Logistics | Uganda</title>
 
+</section>
+  
 <style>
 :root{
   --primary:#0b3d91;
@@ -12,6 +14,80 @@
   --light:#f4f6f8;
   --card:#ffffff;
 }
+
+footer{
+  padding:20px;
+}
+
+/* ===== Sliding Gallery ===== */
+.slider{
+  overflow:hidden;
+  background:#f4f6f8;
+  padding:40px 0;
+}
+
+.slide-track{
+  display:flex;
+  gap:20px;
+  width:calc(250px * 14);
+  animation:scroll 25s linear infinite;
+}
+
+.slide-track img{
+  width:250px;
+  height:180px;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+@keyframes scroll{
+  0%{transform:translateX(0);}
+  100%{transform:translateX(-50%);}
+}
+  
+  /* ===== Banner Section ===== */
+  #banner {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.banner-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* ===== Testimonials Section ===== */
+.card {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* space between photo and text */
+  background: #f8f8f8;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.testimonial-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* circular photo */
+  object-fit: cover;
+}
+
+.card p {
+  margin: 0;
+}
+
+/* Optional: make testimonials grid responsive */
+@media (min-width: 600px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+</style>
 
 /* THEMES */
 body.green{--primary:#1b5e20;--secondary:#0d3d13}
@@ -103,7 +179,7 @@ footer{background:var(--secondary);color:white;text-align:center;padding:20px;fo
 <header>
 <div class="logo-box">
   <video autoplay muted loop playsinline class="logo-media">
-    <source src="logo.mp4" type="video/mp4">
+    <source src="logo1.mp4" type="video/mp4">
   </video>
 </div>
 
@@ -120,7 +196,6 @@ footer{background:var(--secondary);color:white;text-align:center;padding:20px;fo
 <a href="#process">Process</a>
 <a href="#why">Why Us</a>
 <a href="#testimonials">Testimonials</a>
-<a href="#gallery">Gallery</a>
 <a href="#faq">FAQ</a>
 <a href="#contact">Contact</a>
 </nav>
@@ -128,7 +203,6 @@ footer{background:var(--secondary);color:white;text-align:center;padding:20px;fo
 <div class="theme-buttons">
 Theme:
 <button onclick="document.body.className=''">Blue</button>
-<button onclick="document.body.className='green'">Green</button>
 <button onclick="document.body.className='dark'">Dark</button>
 </div>
 
@@ -138,7 +212,11 @@ Theme:
 <a href="#contact" class="btn">Request a Quote</a>
 </section>
 
-<section id="about">
+   <section id="banner">
+    <img src="banner.jpg" alt="Main Banner" class="banner-image">
+  </section>
+
+  <section id="about">
 <h2>About Us</h2>
 <div class="card">
 Precious Clearing & Logistics provides professional customs clearing, freight forwarding, cargo handling and logistics support across Uganda and East Africa. We simplify complex border procedures and ensure all documentation is accurate and compliant. Our goal is to deliver speed, transparency and reliability so your business never experiences delays.
@@ -194,24 +272,94 @@ We proudly serve importers, exporters, traders and companies who need a dependab
 </section>
 
 <section id="testimonials">
-<h2>Client Testimonials</h2>
-<div class="grid">
-<div class="card">"Very fast and reliable service. Highly recommended."</div>
-<div class="card">"They cleared my goods without any delays."</div>
-<div class="card">"Professional and trustworthy team."</div>
-</div>
+  <h2>Client Testimonials</h2>
+  <div class="grid">
+    
+    <div class="card">
+      <img src="photo1.jpg" alt="Client 1" class="testimonial-photo">
+      <p>"Very fast and reliable service. Highly recommended."</p>
+    </div>
+    
+    <div class="card">
+      <img src="photo2.jpg" alt="Client 2" class="testimonial-photo">
+      <p>"They cleared my goods without any delays."</p>
+    </div>
+    
+    <div class="card">
+      <img src="photo3.jpg" alt="Client 3" class="testimonial-photo">
+      <p>"Professional and trustworthy team."</p>
+    </div>
+    
+  </div>
 </section>
 
-<section id="gallery">
-<h2>Gallery</h2>
-<div class="grid">
-<div class="card"><img src="truck1.jpg"></div>
-<div class="card"><img src="cargo1.jpg"></div>
-<div class="card"><img src="warehouse1.jpg"></div>
-</div>
+<style>
+  #testimonials {
+    padding: 2rem;
+  }
+
+  #testimonials h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .card {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* space between photo and text */
+    background: #f8f8f8;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .testimonial-photo {
+    width: 50px; /* small photo */
+    height: 50px;
+    border-radius: 50%; /* makes it circular */
+    object-fit: cover;
+  }
+
+  .card p {
+    margin: 0;
+  }
+
+  /* Optional: make it responsive */
+  @media (min-width: 600px) {
+    .grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>
+  </section>
+  
+<section id="gallery" class="slider">
+  <div class="slide-track">
+    <img src="photo1.jpg">
+    <img src="photo2.jpg">
+    <img src="photo3.jpg">
+    <img src="photo4.jpg">
+    <img src="photo5.jpg">
+    <img src="photo6.jpg">
+    <img src="photo7.jpg">
+  </div>
+  </section>
+
+<section id="videos" class="videos">
+  <div class="container">
+    <h2>Our Work In Action</h2>
+
+    <div class="video-grid">
+      <video src="video1.mp4" controls></video>
+          </div>
+  </div>  
 </section>
 
-<section id="faq">
+  <section id="faq">
 <h2>Frequently Asked Questions</h2>
 <div class="grid">
 <div class="card"><strong>How long does clearing take?</strong><br>Usually 1–3 days depending on cargo.</div>
