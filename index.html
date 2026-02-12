@@ -20,6 +20,7 @@ body.dark{--primary:#111;--secondary:#000;--light:#121212;--card:#1e1e1e;color:w
 /* RESET */
 *{box-sizing:border-box;margin:0;padding:0;font-family:Arial, Helvetica, sans-serif}
 body{background:var(--light);line-height:1.6}
+  html{scroll-behavior:smooth;}
 
 /* HEADER */
 header{
@@ -74,6 +75,11 @@ h2{text-align:center;margin-bottom:25px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
 .card{background:var(--card);padding:22px;border-radius:8px;box-shadow:0 0 10px rgba(0,0,0,0.08)}
 
+  .card:hover{
+  transform:translateY(-6px);
+  transition:0.3s;
+}
+
 img{width:100%;border-radius:6px;object-fit:cover}
 video{width:100%;border-radius:6px;object-fit:cover}
 
@@ -108,12 +114,32 @@ footer{background:var(--secondary);color:white;text-align:center;padding:20px;fo
 
 /* SLIDING GALLERY */
 .slider{overflow:hidden;background:#f4f6f8;padding:40px 0}
-.slide-track{display:flex;gap:20px;width:calc(250px * 14);animation:scroll 25s linear infinite}
+  
+.slide-track{
+  display:flex;
+  gap:20px;
+  width:calc(250px * 14);
+  animation:scroll 25s linear infinite;
+}
+
+.slide-track img{
+  width:220px;
+  height:160px;
+  object-fit:cover;
+  border-radius:8px;
+}
 @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 /* VIDEO SECTION */
-.video-grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+#videos{
+  margin-top:120px;
+}
 
+.video-grid{
+  display:grid;
+  gap:18px;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+}
 /* MOBILE ADJUSTMENTS */
 @media(max-width:600px){
  header h1{font-size:17px}
@@ -156,7 +182,7 @@ Theme:
 <a href="#contact" class="btn">Request a Quote</a>
 </section>
 <section id="banner">
-<img src="banner.png" alt="Main Banner" class="banner.png">
+<img src="banner.png" alt="Main Banner" class="banner-image">
 </section>
 <section id="about">
 <h2>About Us</h2>
