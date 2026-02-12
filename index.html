@@ -13,6 +13,51 @@
   --card:#ffffff;
 }
 
+/* ===== existing styles here ===== */
+
+/* ===== Theme Settings Styles ===== */
+.theme-settings {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.settings-icon {
+  font-size: 24px;
+  color: var(--primary);
+}
+
+.theme-menu {
+  display: none;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background: var(--card);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.theme-menu button {
+  display: block;
+  margin: 5px 0;
+  padding: 6px 12px;
+  width: 100%;
+  border: none;
+  background: var(--primary);
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.theme-settings:hover .theme-menu {
+  display: block;
+}
+</style>
+
+
 /* THEMES */
 body.green{--primary:#1b5e20;--secondary:#0d3d13}
 body.dark{--primary:#111;--secondary:#000;--light:#121212;--card:#1e1e1e;color:white}
@@ -148,7 +193,15 @@ footer{background:var(--secondary);color:white;text-align:center;padding:20px;fo
 </style>
 
 </head>
-<body>
+<body class="dark">
+  <div class="theme-settings">
+  <span class="settings-icon">&#x22EE;</span> <!-- three-dot icon -->
+  <div class="theme-menu">
+    <button onclick="document.body.className=''">Blue</button>
+    <button onclick="document.body.className='green'">Green</button>
+    <button onclick="document.body.className='dark'">Dark</button>
+  </div>
+</div>
 
 <header>
 <div class="logo-box">PC</div>
@@ -171,11 +224,16 @@ footer{background:var(--secondary);color:white;text-align:center;padding:20px;fo
 <a href="#contact">Contact</a>
 </nav>
 
-<div class="theme-buttons">
-Theme:
-<button onclick="document.body.className='dark'">Dark</button>
+<!-- Theme Settings Icon -->
+<div class="theme-settings">
+  <span class="settings-icon">⋮</span>
+  <div class="theme-menu">
+    <p>Select Theme:</p>
+    <button onclick="setTheme('')">Blue</button>
+    <button onclick="setTheme('green')">Green</button>
+    <button onclick="setTheme('dark')">Dark</button>
+  </div>
 </div>
-
 <section class="hero">
 <h2>Trusted Customs Clearing & Freight Experts</h2>
 <p>We clear your goods quickly, legally and safely across borders.</p>
@@ -239,22 +297,21 @@ We proudly serve importers, exporters, traders and companies who need a dependab
 </div>
 </section>
 
-<section id="testimonials">
 <h2>Client Testimonials</h2>
 <div class="grid">
-<div class="card">
-<img src="photo1.jpg" alt="Client 1" class="testimonial-photo">
-<p>"Very fast and reliable service. Highly recommended."</p>
-</div>
-<div class="card">
-<img src="photo2.jpg" alt="Client 2" class="testimonial-photo">
-<p>"They cleared my goods without any delays."</p>
-</div>
-<div class="card">
-<img src="photo3.jpg" alt="Client 3" class="testimonial-photo">
-<p>"Professional and trustworthy team."</p>
-</div>
-</div>
+  <div class="card">
+    <img src="client1.jpg" alt="Client 1" class="testimonial-photo">
+    <p>"Very fast and reliable service. Highly recommended."</p>
+  </div>
+  <div class="card">
+    <img src="client2.jpg" alt="Client 2" class="testimonial-photo">
+    <p>"They cleared my goods without any delays."</p>
+  </div>
+  <div class="card">
+    <img src="client3.jpg" alt="Client 3" class="testimonial-photo">
+    <p>"Professional and trustworthy team."</p>
+  </div>
+</div>  
 </section>
 
 <section id="gallery" class="slider">
@@ -313,6 +370,32 @@ We proudly serve importers, exporters, traders and companies who need a dependab
 </footer>
 
 <a class="whatsapp" href="https://wa.me/256701589239">WhatsApp</a>
+
+<!-- Place JavaScript here -->
+<script>
+  // JS for animated counters
+  const counters = document.querySelectorAll('.stat');
+  counters.forEach(counter => {
+    const updateCount = () => {
+      const target = +counter.innerText.replace(/\D/g,''); // remove any + or text
+      const count = +counter.dataset.count || 0;
+      const speed = 50; // lower is faster
+      const increment = Math.ceil(target / speed);
+      let current = count;
+
+      const counterInterval = setInterval(() => {
+        current += increment;
+        if(current >= target) {
+          counter.innerText = counter.innerText.includes('+') ? target + '+' : target;
+          clearInterval(counterInterval);
+        } else {
+          counter.innerText = counter.innerText.includes('+') ? current + '+' : current;
+        }
+      }, 20);
+    };
+    updateCount();
+  });
+</script>
 
 </body>
 </html>
