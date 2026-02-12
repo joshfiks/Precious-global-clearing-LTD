@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Precious Clearing & Logistics | Uganda</title>
 
 <style>
@@ -13,193 +13,99 @@
   --card:#ffffff;
 }
 
-/* ===== existing styles here ===== */
-
-/* ===== Theme Settings Styles ===== */
-.theme-settings {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  cursor: pointer;
-  z-index: 999;
-}
-
-.settings-icon {
-  font-size: 24px;
-  color: var(--primary);
-}
-
-.theme-menu {
-  display: none;
-  position: absolute;
-  top: 30px;
-  right: 0;
-  background: var(--card);
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
-
-.theme-menu button {
-  display: block;
-  margin: 5px 0;
-  padding: 6px 12px;
-  width: 100%;
-  border: none;
-  background: var(--primary);
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.theme-settings:hover .theme-menu {
-  display: block;
-}
-</style>
-
-
-/* THEMES */
+/* THEME COLORS */
 body.green{--primary:#1b5e20;--secondary:#0d3d13}
 body.dark{--primary:#111;--secondary:#000;--light:#121212;--card:#1e1e1e;color:white}
 
 /* RESET */
 *{box-sizing:border-box;margin:0;padding:0;font-family:Arial, Helvetica, sans-serif}
-body{background:var(--light);line-height:1.6}
-  html{scroll-behavior:smooth;}
+body{background:var(--light);line-height:1.6;color:#000}
+html{scroll-behavior:smooth}
 
 /* HEADER */
-header{
-  background:var(--primary);
-  color:white;
-  padding:18px 12px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:15px;
-  flex-wrap:wrap;
-}
+header{background:var(--primary);color:white;padding:12px 15px;display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:wrap}
+.logo-box{height:55px;width:55px;display:flex;align-items:center;justify-content:center;background:white;border-radius:50%;font-weight:bold;color:var(--primary);font-size:22px}
+header h1{font-size:20px}
 
-.logo-box{
-  height:65px;
-  width:65px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:white;
-  border-radius:50%;
-  font-weight:bold;
-  color:var(--primary);
-  font-size:24px;
-}
+/* NAV */
+nav{background:var(--secondary);display:flex;flex-wrap:wrap;justify-content:center;padding:8px}
+nav a{color:white;text-decoration:none;margin:6px 8px;font-size:13px;font-weight:bold}
 
-header h1{font-size:22px}
+/* THEME MENU */
+.theme-settings{position:fixed;top:12px;right:12px;cursor:pointer;z-index:999}
+.settings-icon{font-size:24px;color:var(--primary)}
+.theme-menu{display:none;position:absolute;top:28px;right:0;background:var(--card);padding:8px;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,0.2)}
+.theme-menu button{display:block;margin:4px 0;padding:6px 10px;width:100%;border:none;background:var(--primary);color:white;border-radius:4px;cursor:pointer}
+.theme-settings:hover .theme-menu{display:block}
 
-/* NAVIGATION */
-nav{
-  background:var(--secondary);
-  display:flex;flex-wrap:wrap;justify-content:center;padding:10px
-}
-nav a{color:white;text-decoration:none;margin:8px 10px;font-size:14px;font-weight:bold}
-
-/* THEME BUTTONS */
-.theme-buttons{text-align:center;margin:12px}
-.theme-buttons button{padding:6px 10px;margin:4px}
-
-/* SECTION BASE */
-section{padding:65px 18px;max-width:1150px;margin:auto}
-h2{text-align:center;margin-bottom:25px}
+/* SECTIONS */
+section{padding:50px 15px;max-width:1100px;margin:auto}
+h2{text-align:center;margin-bottom:20px}
 
 /* HERO */
-.hero{
-  background:linear-gradient(135deg,var(--primary),var(--secondary));
-  color:white;text-align:center;padding:100px 15px
-}
-.btn{display:inline-block;background:white;color:var(--primary);padding:10px 22px;border-radius:6px;text-decoration:none;margin-top:15px;font-weight:bold}
+.hero{background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;text-align:center;padding:80px 15px}
+.btn{display:inline-block;background:white;color:var(--primary);padding:10px 20px;border-radius:6px;text-decoration:none;margin-top:12px;font-weight:bold}
 
-/* CARDS AND GRID */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
-.card{background:var(--card);padding:22px;border-radius:8px;box-shadow:0 0 10px rgba(0,0,0,0.08)}
+/* CARDS & GRID */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+.card{background:var(--card);padding:18px;border-radius:8px;box-shadow:0 0 10px rgba(0,0,0,0.08);transition:0.3s}
+.card:hover{transform:translateY(-4px)}
 
-  .card:hover{
-  transform:translateY(-6px);
-  transition:0.3s;
-}
-
-img{width:100%;border-radius:6px;object-fit:cover}
-video{width:100%;border-radius:6px;object-fit:cover}
+img,video{width:100%;border-radius:6px;object-fit:cover}
 
 /* COUNTERS */
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;text-align:center}
-.stat{font-size:22px;font-weight:bold}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;text-align:center}
+.stat{font-size:20px;font-weight:bold}
 
 /* FORM */
-form input,form textarea,form select{width:100%;padding:10px;margin:8px 0}
+form input,form textarea,form select{width:100%;padding:8px;margin:6px 0;border-radius:4px}
 form button{background:var(--primary);color:white;padding:10px;border:none;border-radius:6px;cursor:pointer}
 
 /* FLOAT BUTTON */
-.whatsapp{
- position:fixed;bottom:18px;right:18px;background:#25d366;color:white;
- padding:14px 18px;border-radius:30px;text-decoration:none;font-weight:bold
-}
+.whatsapp{position:fixed;bottom:12px;right:12px;background:#25d366;color:white;padding:12px 16px;border-radius:30px;text-decoration:none;font-weight:bold}
 
 /* FOOTER */
 footer{background:var(--secondary);color:white;text-align:center;padding:20px;font-size:14px}
 
 /* BANNER */
-#banner{text-align:center;margin:2rem 0}
-.banner-image{width:100%;max-width:1150px;height:auto;border-radius:8px;box-shadow:0 4px 8px rgba(0,0,0,0.2)}
+#banner{text-align:center;margin:1.5rem 0}
+.banner-image{width:100%;max-width:1100px;height:auto;border-radius:6px;box-shadow:0 4px 6px rgba(0,0,0,0.2)}
 
 /* TESTIMONIALS */
-#testimonials .card{
-  display:flex;align-items:center;gap:1rem;background:#f8f8f8;padding:1rem;border-radius:8px;
-}
-.testimonial-photo{width:50px;height:50px;border-radius:50%;object-fit:cover}
-#testimonials .grid{display:grid;gap:1.5rem}
+#testimonials .card{display:flex;align-items:center;gap:0.8rem;background:#f8f8f8;padding:0.8rem;border-radius:8px}
+.testimonial-photo{width:45px;height:45px;border-radius:50%;object-fit:cover}
+#testimonials .grid{display:grid;gap:1rem}
 @media(min-width:600px){#testimonials .grid{grid-template-columns:repeat(3,1fr)}}
 
 /* SLIDING GALLERY */
-.slider{overflow:hidden;background:#f4f6f8;padding:40px 0}
-  
-.slide-track{
-  display:flex;
-  gap:20px;
-  width:calc(250px * 14);
-  animation:scroll 25s linear infinite;
-}
-
-.slide-track img{
-  width:220px;
-  height:160px;
-  object-fit:cover;
-  border-radius:8px;
-}
+.slider{overflow:hidden;background:#f4f6f8;padding:30px 0}
+.slide-track{display:flex;gap:15px;width:calc(220px*14);animation:scroll 25s linear infinite}
+.slide-track img{width:220px;height:160px;border-radius:6px}
 @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-/* VIDEO SECTION */
-#videos{
-  margin-top:120px;
-}
+/* VIDEO */
+#videos{margin-top:50px}
+.video-grid{display:grid;gap:15px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
 
-.video-grid{
-  display:grid;
-  gap:18px;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-}
-/* MOBILE ADJUSTMENTS */
+/* MOBILE */
 @media(max-width:600px){
- header h1{font-size:17px}
- nav a{font-size:12px}
+ header h1{font-size:16px}
+ nav a{font-size:11px}
+ .btn{padding:8px 16px}
+ .hero{padding:60px 10px}
 }
 </style>
-
 </head>
 <body class="dark">
-  <div class="theme-settings">
-  <span class="settings-icon">&#x22EE;</span> <!-- three-dot icon -->
+
+<!-- Theme Settings -->
+<div class="theme-settings">
+  <span class="settings-icon">⋮</span>
   <div class="theme-menu">
-    <button onclick="document.body.className=''">Blue</button>
-    <button onclick="document.body.className='green'">Green</button>
-    <button onclick="document.body.className='dark'">Dark</button>
+    <p>Select Theme:</p>
+    <button onclick="setTheme('')">Blue</button>
+    <button onclick="setTheme('green')">Green</button>
+    <button onclick="setTheme('dark')">Dark</button>
   </div>
 </div>
 
@@ -224,24 +130,16 @@ footer{background:var(--secondary);color:white;text-align:center;padding:20px;fo
 <a href="#contact">Contact</a>
 </nav>
 
-<!-- Theme Settings Icon -->
-<div class="theme-settings">
-  <span class="settings-icon">⋮</span>
-  <div class="theme-menu">
-    <p>Select Theme:</p>
-    <button onclick="setTheme('')">Blue</button>
-    <button onclick="setTheme('green')">Green</button>
-    <button onclick="setTheme('dark')">Dark</button>
-  </div>
-</div>
 <section class="hero">
 <h2>Trusted Customs Clearing & Freight Experts</h2>
 <p>We clear your goods quickly, legally and safely across borders.</p>
 <a href="#contact" class="btn">Request a Quote</a>
 </section>
+
 <section id="banner">
 <img src="banner.png" alt="Main Banner" class="banner-image">
 </section>
+
 <section id="about">
 <h2>About Us</h2>
 <div class="card">
@@ -268,10 +166,10 @@ We proudly serve importers, exporters, traders and companies who need a dependab
 <section id="stats">
 <h2>Our Impact</h2>
 <div class="stats">
-<div class="card"><div class="stat">500+</div> Shipments Cleared</div>
-<div class="card"><div class="stat">100+</div> Clients Served</div>
-<div class="card"><div class="stat">24/7</div> Support</div>
-<div class="card"><div class="stat">5★</div> Service Rating</div>
+<div class="card"><div class="stat" data-target="500">0+</div> Shipments Cleared</div>
+<div class="card"><div class="stat" data-target="100">0+</div> Clients Served</div>
+<div class="card"><div class="stat" data-target="24">0/7</div> Support</div>
+<div class="card"><div class="stat" data-target="5">0★</div> Service Rating</div>
 </div>
 </section>
 
@@ -297,21 +195,22 @@ We proudly serve importers, exporters, traders and companies who need a dependab
 </div>
 </section>
 
+<section id="testimonials">
 <h2>Client Testimonials</h2>
 <div class="grid">
-  <div class="card">
-    <img src="client1.jpg" alt="Client 1" class="testimonial-photo">
-    <p>"Very fast and reliable service. Highly recommended."</p>
-  </div>
-  <div class="card">
-    <img src="client2.jpg" alt="Client 2" class="testimonial-photo">
-    <p>"They cleared my goods without any delays."</p>
-  </div>
-  <div class="card">
-    <img src="client3.jpg" alt="Client 3" class="testimonial-photo">
-    <p>"Professional and trustworthy team."</p>
-  </div>
-</div>  
+<div class="card">
+<img src="client1.jpg" alt="Client 1" class="testimonial-photo">
+<p>"Very fast and reliable service. Highly recommended."</p>
+</div>
+<div class="card">
+<img src="client2.jpg" alt="Client 2" class="testimonial-photo">
+<p>"They cleared my goods without any delays."</p>
+</div>
+<div class="card">
+<img src="client3.jpg" alt="Client 3" class="testimonial-photo">
+<p>"Professional and trustworthy team."</p>
+</div>
+</div>
 </section>
 
 <section id="gallery" class="slider">
@@ -371,33 +270,34 @@ We proudly serve importers, exporters, traders and companies who need a dependab
 
 <a class="whatsapp" href="https://wa.me/256701589239">WhatsApp</a>
 
-<!-- Place JavaScript here -->
 <script>
-  // JS for animated counters
-  const counters = document.querySelectorAll('.stat');
-  counters.forEach(counter => {
-    const updateCount = () => {
-      const target = +counter.innerText.replace(/\D/g,''); // remove any + or text
-      const count = +counter.dataset.count || 0;
-      const speed = 50; // lower is faster
-      const increment = Math.ceil(target / speed);
-      let current = count;
+// THEME SET
+function setTheme(theme){document.body.className=theme}
 
-      const counterInterval = setInterval(() => {
-        current += increment;
-        if(current >= target) {
-          counter.innerText = counter.innerText.includes('+') ? target + '+' : target;
-          clearInterval(counterInterval);
-        } else {
-          counter.innerText = counter.innerText.includes('+') ? current + '+' : current;
-        }
-      }, 20);
-    };
-    updateCount();
-  });
+// COUNTERS
+const counters=document.querySelectorAll('.stat');
+counters.forEach(counter=>{
+  counter.innerText='0';
+  const updateCount=()=>{
+    const target=+counter.dataset.target;
+    let current=0;
+    const increment=Math.ceil(target/50);
+    const interval=setInterval(()=>{
+      current+=increment;
+      if(current>=target){
+        counter.innerText=counter.dataset.target+counter.innerText.replace(/\d+/,'');
+        clearInterval(interval);
+      } else {
+        counter.innerText=current+counter.innerText.replace(/\d+/,'');
+      }
+    },20);
+  };
+  updateCount();
+});
+
+// SLIDING GALLERY ANIMATION
+const slideTrack=document.querySelector('.slide-track');
+slideTrack.style.animation='scroll 25s linear infinite';
 </script>
-
 </body>
 </html>
-
-
