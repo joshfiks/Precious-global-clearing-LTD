@@ -333,18 +333,41 @@ We proudly serve importers, exporters, traders and companies who need a dependab
 </div>
 
 <h3 style="text-align:center">Request a Quote</h3>
-<form>
-<input placeholder="Full Name">
-<input placeholder="Phone Number">
-<select>
-<option>Service Needed</option>
+
+<form onsubmit="sendWhatsApp(); return false;">
+<input id="name" placeholder="Full Name" required>
+<input id="phone" placeholder="Phone Number" required>
+
+<select id="service">
 <option>Clearing</option>
 <option>Freight</option>
 <option>Transport</option>
+<option>Warehousing</option>
 </select>
-<textarea placeholder="Describe your shipment"></textarea>
-<button>Send Request</button>
-</form>  
+
+<textarea id="details" placeholder="Describe your shipment"></textarea>
+
+<button type="submit">📲 Send via WhatsApp</button>
+</form>
+
+<script>
+function sendWhatsApp(){
+  var name = document.getElementById("name").value;
+  var phone = document.getElementById("phone").value;
+  var service = document.getElementById("service").value;
+  var details = document.getElementById("details").value;
+
+  var message =
+  "Hello Precious Clearing & Logistics,%0A%0A" +
+  "Name: " + name + "%0A" +
+  "Phone: " + phone + "%0A" +
+  "Service: " + service + "%0A" +
+  "Details: " + details;
+
+  window.open("https://wa.me/25670589239?text=" + message, "_blank");
+}
+</script>
+
 </section>
 
 <footer>
