@@ -63,14 +63,18 @@ html{scroll-behavior:smooth;}
 
 /* HEADER */
 header{
-  background:var(--primary);
+ background:var(--primary);
   color:white;
-  padding:15px 12px;
+  padding:18px 12px;
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:12px;
+  gap:15px;
   flex-wrap:wrap;
+
+  position:sticky;
+  top:0;
+  z-index:1000;
 }
 
 .logo-box{
