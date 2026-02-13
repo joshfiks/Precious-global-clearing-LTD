@@ -334,21 +334,48 @@ We proudly serve importers, exporters, traders and companies who need a dependab
 
 <h3 style="text-align:center">Request a Quote</h3>
 
-<form onsubmit="sendWhatsApp(); return false;">
+<form id="quoteForm">
+
 <input id="name" placeholder="Full Name" required>
 <input id="phone" placeholder="Phone Number" required>
 
 <select id="service">
-<option>Clearing</option>
-<option>Freight</option>
-<option>Transport</option>
-<option>Warehousing</option>
+  <option value="">Select Service</option>
+  <option value="Clearing" data-price="50">Customs Clearing</option>
+  <option value="Freight" data-price="120">Freight Forwarding</option>
+  <option value="Transport" data-price="80">Transport & Delivery</option>
 </select>
 
-<textarea id="details" placeholder="Describe your shipment"></textarea>
+<select id="urgency">
+  <option value="Normal">Normal</option>
+  <option value="Urgent">Urgent (24h)</option>
+  <option value="Express">Express (Same day)</option>
+</select>
 
-<button type="submit">📲 Send via WhatsApp</button>
+<input id="weight" type="number" placeholder="Weight (KG)">
+<input id="origin" placeholder="Origin Country">
+<input id="destination" placeholder="Destination">
+
+<select id="cargo">
+  <option>General Goods</option>
+  <option>Electronics</option>
+  <option>Food</option>
+  <option>Vehicles</option>
+  <option>Other</option>
+</select>
+
+<input type="file">
+
+<p style="font-weight:bold">Estimated Price: $<span id="price">0</span></p>
+
+<textarea id="details" placeholder="Extra details"></textarea>
+
+<button type="button" onclick="sendQuote()">Send via WhatsApp</button>
+
+<a href="tel:+25670589239" class="btn" style="display:block;text-align:center;margin-top:10px">📞 Call Now</a>
+
 </form>
+
 
 <script>
 function sendWhatsApp(){
