@@ -76,21 +76,27 @@ header{
   top:0;
   z-index:1000;
 }
-
-.logo-box{
-  height:55px;
-  width:55px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:white;
-  border-radius:50%;
-  font-weight:bold;
-  color:var(--primary);
-  font-size:20px;
+.text-logo{
+  text-align:center;
+  line-height:1;
 }
 
-header h1{font-size:20px}
+.text-logo .ltd{
+  font-size:10px;
+  letter-spacing:2px;
+  color:#7ec8ff;
+  display:block;
+}
+
+.text-logo .main{
+  font-size:28px;
+  font-weight:bold;
+  background:linear-gradient(45deg,#000,#0b3d91,#1e88ff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+
 
 /* NAVIGATION */
 nav{
@@ -207,7 +213,10 @@ footer{background:var(--secondary);color:white;text-align:center;padding:15px;fo
 </div>
 
 <header>
-<div class="logo-box">PC</div>
+<div class="text-logo">
+  <span class="ltd">LTD</span>
+  <span class="main">Precious Clearing</span>
+</div>
 <div>
 <h1>Precious Clearing & Logistics</h1>
 <p>Fast • Reliable • Professional Services</p>
